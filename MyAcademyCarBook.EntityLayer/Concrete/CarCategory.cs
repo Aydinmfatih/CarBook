@@ -9,8 +9,8 @@ namespace MyAcademyCarBook.EntityLayer.Concrete
 {
     public class CarCategory
     {
-        [Key]
-        public int CategoryId { get; set; }
+      
+        public int CarCategoryId { get; set; }
         public string? CategoryName { get; set; }
         public string? Description { get; set; }
         public bool Status { get; set; }
