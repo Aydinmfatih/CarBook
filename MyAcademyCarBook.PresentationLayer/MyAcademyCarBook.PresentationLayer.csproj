@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.22">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MyAcademyCarBook.BusinessLayer\MyAcademyCarBook.BusinessLayer.csproj" />
     <ProjectReference Include="..\MyAcademyCarBook.DataAccessLayer\MyAcademyCarBook.DataAccessLayer.csproj" />
     <ProjectReference Include="..\MyAcademyCarBook.EntityLayer\MyAcademyCarBook.EntityLayer.csproj" />

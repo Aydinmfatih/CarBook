@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyAcademyCarBook.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,19 @@ namespace MyAcademyCarBook.DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer("Server=MSI\\SQLEXPRESS;initial catalog = CarBookDb;integrated Security = true");
+            
         }
+        public DbSet<Brand> Brands { get; set; }
 
+        public DbSet<Car> Cars { get; set; }
+
+        public DbSet<CarCategory> CarCategories { get; set; }
+
+        public DbSet<CarStatus> CarStatuses { get; set; }
+
+        public DbSet<Location> Locations { get; set; }
+
+        public DbSet<Price> Prices { get; set; }
     }
 }
