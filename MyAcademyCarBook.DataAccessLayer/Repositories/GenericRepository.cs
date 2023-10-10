@@ -39,9 +39,6 @@ namespace MyAcademyCarBook.DataAccessLayer.Repositories
             context.Set<T>().Update(entity);
             context.SaveChanges();
         }
-        public void get(int id)
-        {
-            context.Set<T>().Find(id);
-        }
+    
     }
 }

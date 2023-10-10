@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Concrete\" />
     <Folder Include="ErrorMessages\" />
     <Folder Include="Container\" />
     <Folder Include="ValidationRules\" />

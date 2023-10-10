@@ -1,3 +1,9 @@
+using MyAcademyCarBook.BusinessLayer.Abstract;
+using MyAcademyCarBook.BusinessLayer.Concrete;
+using MyAcademyCarBook.DataAccessLayer.Abstract;
+using MyAcademyCarBook.DataAccessLayer.Concrete;
+using MyAcademyCarBook.DataAccessLayer.EntitiyFramework;
+
 namespace MyAcademyCarBook.PresentationLayer
 {
     public class Program
@@ -7,6 +13,10 @@ namespace MyAcademyCarBook.PresentationLayer
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<CarBookContext>();
+            builder.Services.AddScoped<IBrandDal,EfBrandDal>();
+            builder.Services.AddScoped<IBrandService,BrandManager>();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -28,7 +38,7 @@ namespace MyAcademyCarBook.PresentationLayer
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Brand}/{action=Index}/{id?}");
 
             app.Run();
         }
