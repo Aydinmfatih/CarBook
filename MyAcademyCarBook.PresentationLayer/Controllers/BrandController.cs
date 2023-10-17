@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyAcademyCarBook.BusinessLayer.Abstract;
+using MyAcademyCarBook.EntityLayer.Concrete;
 
 namespace MyAcademyCarBook.PresentationLayer.Controllers
 {
@@ -16,6 +17,35 @@ namespace MyAcademyCarBook.PresentationLayer.Controllers
         {
             var values = _brandService.TGetListAll();
             return View(values);
+        }
+        [HttpGet]
+        public IActionResult AddBrand()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddBrand(Brand brand)
+        {
+            _brandService.TInsert(brand);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DeleteBrand(int id)
+        {
+            _brandService.TDelete(_brandService.TGetById(id));
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult UpdateBrand(int id)
+        {
+            var value = _brandService.TGetById(id);
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult UpdateBrand(Brand brand)
+        {
+            _brandService.TInsert(brand);
+            return RedirectToAction("Index");
         }
     }
 }
