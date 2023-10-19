@@ -1,0 +1,39 @@
+﻿@model List<MyAcademyCarBook.EntityLayer.Concrete.Car>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Araba Listesi</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Model</th>
+        <th>Kategori</th>
+        <th>Marka</th>
+        <th>Vites Türü</th>
+        <th>Yıl</th>
+        <th>Araba Durumu</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+        <th>Sitede Gör</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CarId</td>
+            <td>@item.Model</td>
+            <td>@item.CarCategory</td>
+            <td>@item.BrandId</td>
+            <td>@item.GearType</td>
+            <td>@item.Year</td>
+            <td>@item.CarstatusId</td>
+            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
+            <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
+            <td><a href="#" class="btn btn-outline-warning">Sitede Gör</a> </td>
+        </tr>
+    }
+</table>

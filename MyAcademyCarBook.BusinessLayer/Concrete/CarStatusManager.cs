@@ -9,36 +9,36 @@ using System.Threading.Tasks;
 
 namespace MyAcademyCarBook.BusinessLayer.Concrete
 {
-    public class CarStatusManager : ICarCategoryService
+    public class CarStatusManager : ICarStatusService
     {
-        private readonly ICarCategoryDal _carStatusDal;
+        private readonly ICarStatusDal _carStatusDal;
         
-        public CarStatusManager(ICarCategoryDal carStatusDal)
+        public CarStatusManager(ICarStatusDal carStatusDal)
         {
             _carStatusDal = carStatusDal;
         }
 
-        public void TDelete(CarCategory entity)
+        public void TDelete(CarStatus entity)
         {
            _carStatusDal.Delete(entity);
         }
 
-        public CarCategory TGetById(int id)
+        public CarStatus TGetById(int id)
         {
             return _carStatusDal.GetById(id);   
         }
 
-        public List<CarCategory> TGetListAll()
+        public List<CarStatus> TGetListAll()
         {
             return _carStatusDal.GetListAll();
         }
 
-        public void TInsert(CarCategory entity)
+        public void TInsert(CarStatus entity)
         {
             _carStatusDal.Insert(entity);
         }
 
-        public void TUpdate(CarCategory entity)
+        public void TUpdate(CarStatus entity)
         {
             _carStatusDal.Update(entity);
         }

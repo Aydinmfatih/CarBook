@@ -9,5 +9,6 @@ namespace MyAcademyCarBook.DataAccessLayer.Abstract
 {
     public interface IPriceDal:IGenericDal<Price>
     {
+        List<Price> GetPricesWithCar();    
     }
 }
