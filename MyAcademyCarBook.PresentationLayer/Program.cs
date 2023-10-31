@@ -3,6 +3,8 @@ using MyAcademyCarBook.BusinessLayer.Concrete;
 using MyAcademyCarBook.DataAccessLayer.Abstract;
 using MyAcademyCarBook.DataAccessLayer.Concrete;
 using MyAcademyCarBook.DataAccessLayer.EntitiyFramework;
+using MyAcademyCarBook.EntityLayer.Concrete;
+using MyAcademyCarBook.PresentationLayer.Models;
 
 namespace MyAcademyCarBook.PresentationLayer
 {
@@ -25,6 +27,8 @@ namespace MyAcademyCarBook.PresentationLayer
 
             builder.Services.AddScoped<IPriceDal, EfPriceDal>();
             builder.Services.AddScoped<IPriceService, PriceManager>();
+
+            builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<CarBookContext>().AddErrorDescriber<CustomIdentityValidator>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -41,7 +45,7 @@ namespace MyAcademyCarBook.PresentationLayer
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
