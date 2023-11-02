@@ -1,44 +1,24 @@
 ﻿@{
     Layout = null;
 }
-
 <!doctype html>
 <html lang="en">
 @await Component.InvokeAsync("_HeadUILayoutComponentPartial")
 
-
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-
     <div class="site-wrap" id="home-section">
-
-
 
         @await Component.InvokeAsync("_NavbarUILayoutComponentPartial")
 
         @await Component.InvokeAsync("_CoverUILayoutComponentPartial")
 
-     
         @RenderBody()
 
         @await Component.InvokeAsync("_FooterUILayoutComponentPartial")
-      
 
     </div>
+    @await Component.InvokeAsync("_ScriptUILayoutComponentPartial")
 
-    <script src="~/carrent-master/js/jquery-3.3.1.min.js"></script>
-    <script src="~/carrent-master/js/popper.min.js"></script>
-    <script src="~/carrent-master/js/bootstrap.min.js"></script>
-    <script src="~/carrent-master/js/owl.carousel.min.js"></script>
-    <script src="~/carrent-master/js/jquery.sticky.js"></script>
-    <script src="~/carrent-master/js/jquery.waypoints.min.js"></script>
-    <script src="~/carrent-master/js/jquery.animateNumber.min.js"></script>
-    <script src="~/carrent-master/js/jquery.fancybox.min.js"></script>
-    <script src="~/carrent-master/js/jquery.easing.1.3.js"></script>
-    <script src="~/carrent-master/js/bootstrap-datepicker.min.js"></script>
-    <script src="~/carrent-master/js/aos.js"></script>
-
-    <script src="~/carrent-master/js/main.js"></script>
 
 </body>
 

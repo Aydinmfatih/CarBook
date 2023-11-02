@@ -28,6 +28,14 @@ namespace MyAcademyCarBook.PresentationLayer
             builder.Services.AddScoped<IPriceDal, EfPriceDal>();
             builder.Services.AddScoped<IPriceService, PriceManager>();
 
+            builder.Services.AddScoped<IServiceDal, EfServiceDal>();
+            builder.Services.AddScoped<IServiceService, ServiceManager>();
+
+
+            builder.Services.AddScoped<IHowItWorkStepDal, EfHowItWorkStepDal>();
+            builder.Services.AddScoped<IHowItWorkStepService, HowItWorkStepManager>();
+
+
             builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<CarBookContext>().AddErrorDescriber<CustomIdentityValidator>();
             builder.Services.AddControllersWithViews();
 

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyAcademyCarBook.DataAccessLayer.Concrete;
 
@@ -11,9 +12,10 @@ using MyAcademyCarBook.DataAccessLayer.Concrete;
 namespace MyAcademyCarBook.DataAccessLayer.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20231102172254_mig_add_service")]
+    partial class mig_add_service
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -339,23 +341,6 @@ namespace MyAcademyCarBook.DataAccessLayer.Migrations
                     b.HasKey("CarStatusId");
 
                     b.ToTable("CarStatuses");
-                });
-
-            modelBuilder.Entity("MyAcademyCarBook.EntityLayer.Concrete.HowItWorkStep", b =>
-                {
-                    b.Property<int>("HowItWorkStepId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HowItWorkStepId"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("HowItWorkStepId");
-
-                    b.ToTable("HowItWorkSteps");
                 });
 
             modelBuilder.Entity("MyAcademyCarBook.EntityLayer.Concrete.Location", b =>
