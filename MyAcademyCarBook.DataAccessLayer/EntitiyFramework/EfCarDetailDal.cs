@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MyAcademyCarBook.DataAccessLayer.Abstract;
+﻿using MyAcademyCarBook.DataAccessLayer.Abstract;
 using MyAcademyCarBook.DataAccessLayer.Concrete;
 using MyAcademyCarBook.DataAccessLayer.Repositories;
 using MyAcademyCarBook.EntityLayer.Concrete;
@@ -11,14 +10,13 @@ using System.Threading.Tasks;
 
 namespace MyAcademyCarBook.DataAccessLayer.EntitiyFramework
 {
-    public class EfCarDal : GenericRepository<Car>, ICarDal
+    public class EfCarDetailDal : GenericRepository<CarDetail>, ICarDetailDal
     {
-        public List<Car> GetAllCarsWithBrands()
+        public CarDetail GetCarDetailByCarId(int id)
         {
             var context = new CarBookContext();
-            var values = context.Cars.Include(x => x.Brand).Include(y=>y.Carstatus).ToList();
+            var values = context.CarDetails.Where(x => x.CarId == id).FirstOrDefault();
             return values;
         }
-       
     }
 }

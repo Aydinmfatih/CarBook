@@ -1,0 +1,51 @@
+﻿using MyAcademyCarBook.BusinessLayer.Abstract;
+using MyAcademyCarBook.DataAccessLayer.Abstract;
+using MyAcademyCarBook.EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyAcademyCarBook.BusinessLayer.Concrete
+{
+    public class CarDetailManager : ICarDetailService
+    {
+        private readonly ICarDetailDal _carDetailDal;
+
+        public CarDetailManager(ICarDetailDal carDetailDal)
+        {
+            _carDetailDal = carDetailDal;
+        }
+
+        public void TDelete(CarDetail entity)
+        {
+            _carDetailDal.Delete(entity);
+        }
+
+        public CarDetail TGetById(int id)
+        {
+           return _carDetailDal.GetById(id);
+        }
+
+        public CarDetail TGetCarDetailByCarId(int id)
+        {
+            return _carDetailDal.GetCarDetailByCarId(id);  
+        }
+
+        public List<CarDetail> TGetListAll()
+        {
+           return _carDetailDal.GetListAll();
+        }
+
+        public void TInsert(CarDetail entity)
+        {
+            _carDetailDal.Insert(entity);
+        }
+
+        public void TUpdate(CarDetail entity)
+        {
+           _carDetailDal.Update(entity);    
+        }
+    }
+}

@@ -31,6 +31,8 @@ namespace MyAcademyCarBook.DataAccessLayer.Concrete
         public DbSet<Service> Services { get; set; }
 
         public DbSet<HowItWorkStep> HowItWorkSteps { get; set; }
+
+        public DbSet<CarDetail> CarDetails { get; set; }
     }
 }
  

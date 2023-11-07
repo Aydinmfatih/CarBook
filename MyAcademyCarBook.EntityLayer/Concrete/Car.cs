@@ -23,6 +23,7 @@ namespace MyAcademyCarBook.EntityLayer.Concrete
         public int CarstatusId { get; set; }
         public CarStatus? Carstatus { get; set; }
         public List<Price>? Prices { get; set; }
+        public List<CarDetail> CarDetails { get; set; }
 
     }
 }
