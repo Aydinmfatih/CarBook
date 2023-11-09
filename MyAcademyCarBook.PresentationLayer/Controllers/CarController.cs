@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyAcademyCarBook.BusinessLayer.Abstract;
+using MyAcademyCarBook.DataAccessLayer.Concrete;
 
 namespace MyAcademyCarBook.PresentationLayer.Controllers
 {
@@ -18,7 +19,7 @@ namespace MyAcademyCarBook.PresentationLayer.Controllers
             var values = _carService.TGetListAll();
             return View(values);
         }
-        
+
         public IActionResult Index2()
         {
             var values = _carService.TGetAllCarsWithBrands();
@@ -26,12 +27,16 @@ namespace MyAcademyCarBook.PresentationLayer.Controllers
         }
         public IActionResult CarList()
         {
+            ViewBag.title1 = "Araç Listesi";
+            ViewBag.title2 = "Sizin için araç listesi";
             var values = _carService.TGetAllCarsWithBrands();
             return View(values);
         }
 
         public IActionResult CarDetail(int id)
         {
+            ViewBag.title1 = "Araç Detayı";
+            ViewBag.title2 = "Son Araç detayı";
             var value = _carDetailService.TGetCarDetailByCarId(id);
             ViewBag.v = value.Description;
             return View();

@@ -11,36 +11,36 @@ namespace MyAcademyCarBook.BusinessLayer.Concrete
 {
     public class CarCategoryManager : ICarCategoryService
     {
-        private readonly ICarCategoryDal carCategoryDal;
+        private readonly ICarCategoryDal _carCategoryDal;
 
         public CarCategoryManager(ICarCategoryDal carCategoryDal)
         {
-            this.carCategoryDal = carCategoryDal;
+            _carCategoryDal = carCategoryDal;
         }
 
         public void TDelete(CarCategory entity)
         {
-            this.carCategoryDal.Delete(entity);
+            _carCategoryDal.Delete(entity);
         }
 
         public CarCategory TGetById(int id)
         {
-            return this.TGetById(id);
+            return _carCategoryDal.GetById(id);
         }
 
         public List<CarCategory> TGetListAll()
         {
-            return this.TGetListAll();
+            return _carCategoryDal.GetListAll();
         }
 
         public void TInsert(CarCategory entity)
         {
-            this.carCategoryDal.Insert(entity);
+            _carCategoryDal.Insert(entity);
         }
 
         public void TUpdate(CarCategory entity)
         {
-            this.carCategoryDal.Update(entity);
+            _carCategoryDal.Update(entity);
         }
     }
 }
