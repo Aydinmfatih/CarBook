@@ -11,5 +11,6 @@ namespace MyAcademyCarBook.BusinessLayer.Abstract
     public interface ICarDetailService:IGenericService<CarDetail>
     {
         CarDetail TGetCarDetailByCarId(int id);
+        CarDetail TGetCarDetailWithAuthor(int id);
     }
 }

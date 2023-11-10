@@ -1,17 +1,30 @@
-﻿
+﻿@model List<Comment>
 
+
+<h3 class="mb-5">@Model.Count Yorum</h3>
 <ul class="comment-list">
-
-    <h3 class="mb-5">1 Comments</h3>
-    <li class="comment">
-        <div class="vcard bio">
-            <img src="~/carrent-master/images/person_2.jpg" alt="Free Website Template by Free-Template.co">
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-danger" role="alert">
+            Henüz Hiç Yorum Yapılmamış
         </div>
-        <div class="comment-body">
-            <h3>Jacob Smith</h3>
-            <div class="meta">January 9, 2018 at 2:21pm</div>
-            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-            <p><a href="#" class="reply">Reply</a></p>
-        </div>
-    </li>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <li class="comment">
+                <div class="vcard bio">
+                    <img src="~/carrent-master/images/person_2.jpg" alt="Free Website Template by Free-Template.co">
+                </div>
+                <div class="comment-body">
+                    <h3>@item.NameSurname</h3>
+                    <div class="meta">@item.CreatedDate.ToShortDateString()</div>
+                    <p>@item.Description</p>
+                </div>
+            </li>
+        }
+    }
+   
+   
 </ul>

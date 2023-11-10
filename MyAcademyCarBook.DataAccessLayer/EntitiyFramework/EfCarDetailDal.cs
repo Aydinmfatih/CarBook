@@ -1,4 +1,5 @@
-﻿using MyAcademyCarBook.DataAccessLayer.Abstract;
+﻿using Microsoft.EntityFrameworkCore;
+using MyAcademyCarBook.DataAccessLayer.Abstract;
 using MyAcademyCarBook.DataAccessLayer.Concrete;
 using MyAcademyCarBook.DataAccessLayer.Repositories;
 using MyAcademyCarBook.EntityLayer.Concrete;
@@ -16,6 +17,13 @@ namespace MyAcademyCarBook.DataAccessLayer.EntitiyFramework
         {
             var context = new CarBookContext();
             var values = context.CarDetails.Where(x => x.CarId == id).FirstOrDefault();
+            return values;
+        }
+
+        public CarDetail GetCarDetailWithAuthor(int id)
+        {
+            var context = new CarBookContext();
+            var values = context.CarDetails.Include(x=>x.AppUser).Where(y=>y.CarId == id).FirstOrDefault();
             return values;
         }
     }
