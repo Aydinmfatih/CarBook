@@ -1,66 +1,204 @@
 ﻿@{
     Layout = null;
 }
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Car book Admin</title>
+    <title>Gradient Able bootstrap admin template by codedthemes </title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Gradient Able Bootstrap admin template made using Bootstrap 4. The starter version of Gradient Able is completely free for personal project." />
+    <meta name="keywords" content="flat ui, admin , Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="codedthemes">
+    <!-- Favicon icon -->
+    <link rel="icon" href="~/gradient-able-bsp4-lite/assets/images/favicon.ico" type="image/x-icon">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="~/gradient-able-bsp4-lite/assets/css/bootstrap/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="~/gradient-able-bsp4-lite/assets/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="~/gradient-able-bsp4-lite/assets/icon/font-awesome/css/font-awesome.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/sidebar-09/css/style.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="~/gradient-able-bsp4-lite/assets/icon/icofont/css/icofont.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="~/gradient-able-bsp4-lite/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/gradient-able-bsp4-lite/assets/css/jquery.mCustomScrollbar.css">
 </head>
-<body>
 
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                </button>
-            </div>
-            <div class="img bg-wrap text-center py-4" style="background-image: url(/sidebar-09/images/bg_1.jpg);">
-                <div class="user-logo">
-                    <div class="img" style="background-image: url(/sidebar-09/images/logo.jpg);"></div>
-                    <h3>Catriona Henderson</h3>
+<body>
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+
+                        <a href="index.html">
+                            <p>Carbook Yönetim Paneli</p>
+                        </a>
+                        <a class="mobile-options">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    <i class="ti-fullscreen"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li style="padding-top:10px;padding-bottom:10px" class="active">
+                                    <a href="index.html">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/Brand/Index">
+                                        <span class="pcoded-micon"><i class="ti-pulse"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Markalar</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/Car/Index2/">
+                                        <span class="pcoded-micon"><i class="ti-car"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Arabalar</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/CarStatus/Index/">
+                                        <span class="pcoded-micon"><i class="ti-truck"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Araba Durumları</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/Price/Index/">
+                                        <span class="pcoded-micon"><i class="ti-money"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Araç Fiyatları</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/About/AdminIndex/">
+                                        <span class="pcoded-micon"><i class="ti-crown"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Takım Arkadaşları</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/About/AboutIndex2/">
+                                        <span class="pcoded-micon"><i class="ti-search"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Hakkında</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/Service/ServiceList/">
+                                        <span class="pcoded-micon"><i class="ti-plus"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Hizmetler</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/Contact/AdminIndex/">
+                                        <span class="pcoded-micon"><i class="ti-bookmark"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">İletişim Adresleri</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/Contact/AdminIndex2/">
+                                        <span class="pcoded-micon"><i class="ti-email"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Mesajlar</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/EndService/Index/">
+                                        <span class="pcoded-micon"><i class="ti-flag-alt-2"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Son Hizmetler</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/CarCategory/Index/">
+                                        <span class="pcoded-micon"><i class="ti-bag"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Araç Kategorileri</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="pcoded-hasmenu">
+                                    <a href="/CarDetail/Index/">
+                                        <span class="pcoded-micon"><i class="ti-rocket"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Araç Detayları</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+
+
+
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+
+                            <div class="main-body">
+
+                                <div class="page-wrapper">
+                                    @RenderBody()
+
+                                </div>
+                            </div>
+                            <div id="styleSelector">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <ul class="list-unstyled components mb-5">
-                <li>
-                    <a href="#"><span class="fa fa-home mr-3"></span> Dashboard</a>
-                </li>
-                <li>
-                    <a href="/Car/Index"><span class="fa fa-car mr-3"></span> Arabalar</a>
-                </li>
-                <li>
-                    <a href="/Car/Index2"><span class="fa fa-bus mr-3"></span> Arabalar & Markalar</a>
-                </li>
-                <li>
-                    <a href="/Brand/Index"><span class="fa fa-gift mr-3"></span>Markalar</a>
-                </li>
-                <li>
-                    <a href="/CarStatus/Index"><span class="fa fa-cloud mr-3"></span>Araba Durumları</a>
-                </li>
-                <li>
-                    <a href="/Price/Index"><span class="fa fa-money mr-3"></span>Araba Fiyatları</a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-        <!-- Page Content  -->
-        <div id="content" class="p-4 p-md-5 pt-5">
-            @RenderBody()
         </div>
     </div>
 
-    <script src="~/sidebar-09/js/jquery.min.js"></script>
-    <script src="~/sidebar-09/js/popper.js"></script>
-    <script src="~/sidebar-09/js/bootstrap.min.js"></script>
-    <script src="~/sidebar-09/js/main.js"></script>
+
+    <script type="text/javascript" src="~/gradient-able-bsp4-lite/assets/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="~/gradient-able-bsp4-lite/assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/gradient-able-bsp4-lite/assets/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="~/gradient-able-bsp4-lite/assets/js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/gradient-able-bsp4-lite/assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="~/gradient-able-bsp4-lite/assets/js/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="~/gradient-able-bsp4-lite/assets/js/modernizr/css-scrollbars.js"></script>
+    <script type="text/javascript" src="~/gradient-able-bsp4-lite/assets/js/script.js"></script>
+    <script src="~/gradient-able-bsp4-lite/assets/js/pcoded.min.js"></script>
+    <script src="~/gradient-able-bsp4-lite/assets/js/vartical-demo.js"></script>
+    <script src="~/gradient-able-bsp4-lite/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 </body>
 </html>

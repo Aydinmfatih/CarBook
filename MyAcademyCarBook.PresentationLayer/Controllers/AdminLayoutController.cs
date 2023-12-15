@@ -8,5 +8,18 @@ namespace MyAcademyCarBook.PresentationLayer.Controllers
         {
             return View();
         }
+
+        public PartialViewResult PartialScript()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialHead()
+        {
+            return PartialView();
+        }
+        public PartialViewResult PartialSidebar()
+        {
+            return PartialView();
+        }
     }
 }
