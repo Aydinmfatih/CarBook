@@ -1,0 +1,24 @@
+﻿@model Testimonial
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Yeni Referans Girişi</h1>
+
+<form method="post">
+    <br />
+    <label>Ünvanını Girin</label>
+    <input type="text" asp-for="Title" class="form-control" style="border:1px solid #2222 " />
+    <br />
+    <label>İsim Soyisim</label>
+    <input type="text" asp-for="NameSurname" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Resim Yolunu</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" style="border:1px solid #2222" />
+    <br />
+    <button class="btn btn-primary">Yeni Referans Ekle</button>
+</form>

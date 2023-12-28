@@ -47,6 +47,13 @@ namespace MyAcademyCarBook.PresentationLayer
             builder.Services.AddScoped<ICommentDal, EfCommentDal>();
             builder.Services.AddScoped<ICommentService, CommentManager>();
 
+            builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+            builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+
+            builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+            builder.Services.AddScoped<IAboutService,AboutManager>();
+
+
 
             builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<CarBookContext>().AddErrorDescriber<CustomIdentityValidator>();
             builder.Services.AddControllersWithViews().AddFluentValidation();
