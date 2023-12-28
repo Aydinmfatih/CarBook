@@ -1,0 +1,103 @@
+﻿@model List<Car>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="row">
+
+    <!-- order-card start -->
+    <div class="col-md-6 col-xl-3">
+        <div class="card bg-c-blue order-card">
+            <div class="card-block">
+                <h6 class="m-b-20">Araç Sayısı</h6>
+                <h2 class="text-right"><i class="ti-shopping-cart f-left"></i><span>@ViewBag.count</span></h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card bg-c-green order-card">
+            <div class="card-block">
+                <h6 class="m-b-20">Total Sales</h6>
+                <h2 class="text-right"><i class="ti-tag f-left"></i><span>1641</span></h2>
+                <p class="m-b-0">Bu Ay<span class="f-right">123</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card bg-c-yellow order-card">
+            <div class="card-block">
+                <h6 class="m-b-20">Revenue</h6>
+                <h2 class="text-right"><i class="ti-reload f-left"></i><span>$42,562</span></h2>
+                <p class="m-b-0">This Month<span class="f-right">$5,032</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3">
+        <div class="card bg-c-pink order-card">
+            <div class="card-block">
+                <h6 class="m-b-20">Total Profit</h6>
+                <h2 class="text-right"><i class="ti-wallet f-left"></i><span>$9,562</span></h2>
+                <p class="m-b-0">This Month<span class="f-right">$542</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="card tabs-card">
+            <div class="card-block p-0">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs md-tabs" role="tablist">
+                    <li class="nav-item">
+                        <h3>Araçlar</h3>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content card-block">
+                    <div class="tab-pane active" id="home3" role="tabpanel">
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Görsel</th>
+                                    <th>Model</th>
+                                    <th>Kategori</th>
+                                    <th>Marka</th>
+                                    <th>Vites Türü</th>
+                                    <th>Yıl</th>
+                                    <th>Araba Durumu</th>
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.CarId</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                            <img class="img-fluid" src="@item.ImageUrl" style="width:100px;height:75px" />
+                                        </td>
+                                        <td>@item.Model</td>
+                                        <td>@item.CarCategory.CategoryName</td>
+                                        <td>@item.Brand.BrandName</td>
+                                        <td>@item.GearType</td>
+                                        <td>@item.Year</td>
+                                        <td>@item.Carstatus.CarStatusName</td>
+                                    </tr>
+                                }
+
+                            </table>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

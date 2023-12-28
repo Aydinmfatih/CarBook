@@ -9,6 +9,7 @@
 <table class="table table-bordered">
     <tr>
         <th>#</th>
+        <th>Görsel</th>
         <th>Model</th>
         <th>Kategori</th>
         <th>Marka</th>
@@ -24,16 +25,20 @@
     {
         <tr>
             <td>@item.CarId</td>
+            <td style="text-align: center; vertical-align: middle;">
+                <img src="@item.ImageUrl" style="width:300px;height:200px" />
+            </td>
             <td>@item.Model</td>
-            <td>@item.CarCategory</td>
-            <td>@item.BrandId</td>
+            <td>@item.CarCategory.CategoryName</td>
+            <td>@item.Brand.BrandName</td>
             <td>@item.GearType</td>
             <td>@item.Year</td>
-            <td>@item.CarstatusId</td>
-            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
+            <td>@item.Carstatus.CarStatusName</td>
+            <td><a href="/Car/DeleteCar/@item.CarId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Car/UpdateCar/@item.CarId" class="btn btn-outline-success">Güncelle</a></td>
             <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
             <td><a href="#" class="btn btn-outline-warning">Sitede Gör</a> </td>
         </tr>
     }
 </table>
+<a href="/Car/CreateCar" class="btn btn-info">Yeni Araç Girişi</a>

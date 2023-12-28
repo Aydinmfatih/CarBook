@@ -9,7 +9,7 @@
     <tr>
         <th>#</th>
         <th>Marka Adı</th>
-        <th>Durum</th>
+        <th>Statü</th>
         <th>Sil</th>
         <th>Güncelle</th>
     </tr>
@@ -18,7 +18,14 @@
         <tr>
             <td>@item.BrandId</td>
             <td>@item.BrandName</td>
-            <td>@item.Status</td>
+            @if (item.Status==true)
+            {
+                <td><span class="label label-success">@item.Status</span></td>
+            }
+            else
+            {
+                <td><span class="label label-danger">@item.Status</span></td>
+            }
             <td> <a href="/Brand/DeleteBrand/@item.BrandId" class="btn btn-danger">Sil</a></td>
             <td> <a href="/Brand/UpdateBrand/@item.BrandId" class="btn btn-success">Güncelle</a></td>
         </tr>

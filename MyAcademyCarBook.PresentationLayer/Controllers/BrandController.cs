@@ -44,7 +44,7 @@ namespace MyAcademyCarBook.PresentationLayer.Controllers
         [HttpPost]
         public IActionResult UpdateBrand(Brand brand)
         {
-            _brandService.TInsert(brand);
+            _brandService.TUpdate(brand);
             return RedirectToAction("Index");
         }
 
