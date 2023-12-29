@@ -22,7 +22,7 @@ namespace MyAcademyCarBook.EntityLayer.Concrete
         public bool Status { get; set; }
         public int CarstatusId { get; set; }
         public CarStatus? Carstatus { get; set; }
-        public List<Price>? Prices { get; set; }
+        public List<Price> Prices { get; set; }
         public List<CarDetail> CarDetails { get; set; }
         public List<Comment> Comments { get; set; }
 

@@ -1,0 +1,64 @@
+﻿@model List<Car>
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>Our Offer</h3>
+                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nesciunt nemo vel earum maxime neque!</p>
+                <p>
+                    <a href="#" class="btn btn-primary custom-prev">Previous</a>
+                    <span class="mx-2">/</span>
+                    <a href="#" class="btn btn-primary custom-next">Next</a>
+                </p>
+            </div>
+            <div class="col-lg-9">
+
+                <div class="nonloop-block-13 owl-carousel">
+                    @foreach(var item in Model)
+                    {
+                        <div class="item-1">
+                            <a href="#"><img src="@item.ImageUrl" alt="Image" class="img-fluid" style="height:200px;width:400px"></a>
+                            <div class="item-1-contents">
+                                <div class="text-center">
+                                    <h3><a href="#">@item.Brand.BrandName @item.Model</a></h3>
+                                    <div class="rating">
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                        <span class="icon-star text-warning"></span>
+                                    </div>
+                                    <div class="rent-price">
+                                        @foreach (var price in item.Prices)
+                                        {
+                                            <span>@price.PriceType:</span>
+                                            <span class="spec">@price.PriceValue ₺ </span>
+                                        }
+                                    </div>
+                                </div>
+                                <ul class="specs">
+                                    <li>
+                                        <span>Koltuk sayısı</span>
+                                        <span class="spec">@item.PersonCount</span>
+                                    </li>
+                                    <li>
+                                        <span>Vites türü</span>
+                                        <span class="spec">@item.GearType</span>
+                                    </li>
+                                    <li>
+                                        <span>Yıl</span>
+                                        <span class="spec">@item.Year</span>
+                                    </li>
+                                </ul>
+                                <div class="d-flex action">
+                                    <a href="contact.html" class="btn btn-primary">Şimdi Kirala</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

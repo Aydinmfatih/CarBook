@@ -1,0 +1,68 @@
+﻿@model Contact
+@{
+    ViewData["Title"] = "UIContact";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<div class="site-section bg-light" id="contact-section">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-7 text-center mb-5">
+                <h2>Bizimle Burdan İletişime Geç</h2>
+                <p>Sizinle Görüşmek İçin Sabırsızlanıyoruz !</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mb-5">
+                <form id="myForm" action="/Contact/CreateContact" method="post">
+                    <div class="form-group row">
+                        <div class="col-md-6 mb-4 mb-lg-0">
+                            <input type="text" asp-for="FirstName" class="form-control" placeholder="Ad">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" asp-for="LastName" class="form-control" placeholder="Soyad">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input type="text" asp-for="Email" class="form-control" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <textarea asp-for="Description" class="form-control" placeholder="Mesajını Yaz" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6 mr-auto">
+                           <button type="submit" class="btn btn-primary">Gönder</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            @await Component.InvokeAsync("_ContactInfoComponentPartial")
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('myForm');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            setTimeout(function () {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Başarılı!',
+                    text: 'Mesajınız başarıyla kaydedildi.',
+                });
+                form.reset();
+            }, 1000);
+        });
+    });
+</script>

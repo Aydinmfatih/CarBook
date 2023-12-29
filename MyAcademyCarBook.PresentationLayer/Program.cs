@@ -53,6 +53,11 @@ namespace MyAcademyCarBook.PresentationLayer
             builder.Services.AddScoped<IAboutDal, EfAboutDal>();
             builder.Services.AddScoped<IAboutService,AboutManager>();
 
+            builder.Services.AddScoped<IContactDal, EfContactDal>();
+            builder.Services.AddScoped<IContactService, ContactManager>();
+
+            builder.Services.AddScoped<IContactInfoDal, EfContactInfoDal>();
+            builder.Services.AddScoped<IContactInfoService, ContactInfoManager>();
 
 
             builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<CarBookContext>().AddErrorDescriber<CustomIdentityValidator>();
