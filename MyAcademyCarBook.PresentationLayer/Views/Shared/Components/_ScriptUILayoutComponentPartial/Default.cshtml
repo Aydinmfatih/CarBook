@@ -11,3 +11,11 @@
 <script src="~/carrent-master/js/aos.js"></script>
 
 <script src="~/carrent-master/js/main.js"></script>
+<script>
+    $(window).on('load', function () {
+        // Sayfa yüklendikten sonra preloader'ı kaldır
+        $('#preloader').fadeOut('slow', function () {
+            $(this).remove();
+        });
+    });
+</script>

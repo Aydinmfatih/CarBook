@@ -4,6 +4,7 @@ using MyAcademyCarBook.BusinessLayer.Abstract;
 using MyAcademyCarBook.DataAccessLayer.Concrete;
 using MyAcademyCarBook.EntityLayer.Concrete;
 using Newtonsoft.Json.Linq;
+using X.PagedList;
 
 namespace MyAcademyCarBook.PresentationLayer.Controllers
 {
@@ -34,12 +35,16 @@ namespace MyAcademyCarBook.PresentationLayer.Controllers
             var values = _carService.TGetAllCarsWithBrands();
             return View(values);
         }
-        public IActionResult CarList()
+        public IActionResult CarList(int page = 1)
         {
+
             ViewBag.title1 = "Araç Listesi";
             ViewBag.title2 = "Sizin için araç listesi";
-            var values = _carService.TGetAllCarsWithBrands();
-            return View(values);
+
+            var allCars = _carService.TGetAllCarsWithBrands().ToPagedList(page,4);
+
+
+            return View(allCars);
         }
 
         public IActionResult CarDetail(int id)
@@ -144,6 +149,13 @@ namespace MyAcademyCarBook.PresentationLayer.Controllers
         {
             _carService.TInsert(car);
             return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult RentCar(int seatCount, string gearType, int brandId, int categoryId)
+        {
+            var values = _carService.TGetAllCarsWithBrands().Where(x => x.PersonCount == seatCount && x.GearType == gearType && x.BrandId == brandId && x.CarCategoryId == categoryId).ToList();
+
+            return View(values);
         }
 
     }

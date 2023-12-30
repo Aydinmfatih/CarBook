@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Araç Kategori Listesi</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th>Kategori Açıklaması</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CarCategoryId</td>
+            <td>@item.CategoryName</td>
+            <td>@item.Description</td>
+            <td>@item.Status</td>
+            <td><a href="/CarCategory/DeleteCarCategory/@item.CarCategoryId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/CarCategory/UpdateCarCategory/@item.CarCategoryId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/CarCategory/AddCarCategory" class="btn btn-primary">Yeni Kategori Girişi</a>
+

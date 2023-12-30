@@ -1,9 +1,10 @@
-﻿@model List<Car>
+﻿@model X.PagedList.IPagedList<Car>
+@using X.PagedList.Mvc.Core.Common
+@using X.PagedList.Mvc.Core
 @{
     ViewData["Title"] = "CarList";
     Layout = "~/Views/UILayout/Index.cshtml";
 }
-
 
 <div class="site-section bg-light">
     <div class="container">
@@ -51,12 +52,11 @@
                     </div>
                 </div>
             }
-            <div class="col-12">
-                <span class="p-3">1</span>
-                <a href="#" class="p-3">2</a>
-                <a href="#" class="p-3">3</a>
-                <a href="#" class="p-3">4</a>
-            </div>
+        </div>
+
+        <div class="col-12">
+            @Html.PagedListPager(Model, page => Url.Action("CarList", new { page }))
+
         </div>
     </div>
 </div>

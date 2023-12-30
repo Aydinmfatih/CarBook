@@ -1,37 +1,39 @@
-﻿<div class="ftco-blocks-cover-1">
+﻿@model Car
+<div class="ftco-blocks-cover-1">
     <div class="ftco-cover-1 overlay" style="background-image: url('/carrent-master/images/hero_1.jpg')">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
                     <div class="feature-car-rent-box-1">
 
-                        <form method="get" action="/Car/RentCarList">
-                            <h3>Range Rover S7</h3>
-                            <ul class="list-unstyled">
-                                <li>
-                                    <span>Doors</span>
-                                    <span class="spec">4</span>
-                                </li>
-                                <li>
-                                    <span>Seats</span>
-                                    <span class="spec">6</span>
-                                </li>
-                                <li>
-                                    <span>Lugage</span>
-                                    <span class="spec">2 Suitcase/2 Bags</span>
-                                </li>
-                                <li>
-                                    <span>Transmission</span>
-                                    <span class="spec">Automatic</span>
-                                </li>
-                                <li>
-                                    <span>Minium age</span>
-                                    <span class="spec">Automatic</span>
-                                </li>
-                            </ul>
+                        <form method="get" asp-controller="Car" asp-action="RentCar">
+                            <h3>İstediğin Özelliklere Göre Aracını Seç</h3>
+                            <hr />
+                            <label>Kategoriler</label>
+                            <select asp-items="ViewBag.category" name="categoryId" class="form-control" style="border: 1px solid #2222"></select>
+                            <br />
+                            <label>Markalar</label>
+                            <select asp-items="ViewBag.brand" name="brandId" class="form-control" style="border: 1px solid #2222"></select>
+                            <br />
+                            <label>Vites türü</label>
+                            <select class="form-control" style="border:2px solid #2222" name="gearType">
+                                <option value="Otomatik">Otomatik</option>
+                                <option value="Yarı Otomatik">Yarı Otomatik</option>
+                                <option value="Manuel">Manuel</option>
+                            </select>
+                            <br />
+                            <label>Koltuk Sayısı</label>
+                            <select name="seatCount" class="form-control" style="border:2px solid #2222;color:#5D3EBC">
+                                @for (int i = 1; i <= 10; i++)
+                                {
+
+                                    <option value="@i" style="color:#5D3EBC">@i</option>
+
+                                }
+                            </select>
+                            <br />
                             <div class="d-flex align-items-center bg-light p-3">
-                                <span>$150/day</span>
-                                <a href="contact.html" class="ml-auto btn btn-primary">Rent Now</a>
+                                <button class="ml-auto btn btn-primary">Araçları Getir</button>
                             </div>
                         </form>
                     </div>
